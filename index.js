@@ -1,16 +1,15 @@
-console.log(505)
-console.log(2.34)
-console.log('qwerty')
-console.log(false)
-console.log(null)
-console.log(undefined)
-
-//console.log(userFirstName)
+let number1;
+console.log(number1);
+number1 = 12;
+console.log(number1);
 
 let userFirstName;
-console.log(userFirstName)
-userFirstName = 'Bred';
-userFirstName = "O'Donel";
-userFirstName = 'O\'Donel';
 
-let isSunInSkyNow = false;
+const userLastName = "Pitt";
+
+userFirstName = "Tom";
+//userFirstName = 'Brad';
+
+//userLastName = "Cruse";
+
+console.log(userFirstName, userLastName);
