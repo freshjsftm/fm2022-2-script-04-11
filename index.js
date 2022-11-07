@@ -1,18 +1,10 @@
-let number1 = 1;
-let number2 = 2;
 
-// number1 = number1 + 1;
-// console.log(number1);
-// number1++;
-// console.log(number1);
-// ++number1;
-// console.log(number1);
+const object1 = {};
+const object2 = null;
 
-// number1 = number1 - 1;
-// console.log(number1);
-// number1--;
-// console.log(number1);
+let number1 = 5;
 
-//console.log(number2++)
+number1 = number1 + 2;//7
+number1 += 2;         //9
 
-let result = --number1 + number1; //bad practice
+number1 /=3;          //3
