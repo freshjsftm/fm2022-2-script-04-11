@@ -1,7 +1,17 @@
-let number1 = '12'; //2b
-number1 = '123456'; //6b
-number1 = 78;       //4b
-number1 = number1 +45; //4b
-//number1 = 4n;       //8b
+let number1 = 12;
+let number2 = "12";
 
-let numberBig = 13n; //bigInt
+console.log(number1 + number2); //неявне приведення number1 до строки
+console.log(number1 + Number(number2)); //явне приведення number2 до числа
+
+number1 = 5;
+number2 = ""; //
+
+console.log(number1 * number2);
+
+//false
+//0 -0
+//NaN
+//''
+//undefined
+//null
