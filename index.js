@@ -1,15 +1,7 @@
-let number1;
-console.log(number1);
-number1 = 12;
-console.log(number1);
+let number1 = '12'; //2b
+number1 = '123456'; //6b
+number1 = 78;       //4b
+number1 = number1 +45; //4b
+//number1 = 4n;       //8b
 
-let userFirstName;
-
-const userLastName = "Pitt";
-
-userFirstName = "Tom";
-//userFirstName = 'Brad';
-
-//userLastName = "Cruse";
-
-console.log(userFirstName, userLastName);
+let numberBig = 13n; //bigInt
