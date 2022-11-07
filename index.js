@@ -1,17 +1,18 @@
-let number1 = 12;
-let number2 = "12";
+let number1 = 1;
+let number2 = 2;
 
-console.log(number1 + number2); //неявне приведення number1 до строки
-console.log(number1 + Number(number2)); //явне приведення number2 до числа
+// number1 = number1 + 1;
+// console.log(number1);
+// number1++;
+// console.log(number1);
+// ++number1;
+// console.log(number1);
 
-number1 = 5;
-number2 = ""; //
+// number1 = number1 - 1;
+// console.log(number1);
+// number1--;
+// console.log(number1);
 
-console.log(number1 * number2);
+//console.log(number2++)
 
-//false
-//0 -0
-//NaN
-//''
-//undefined
-//null
+let result = --number1 + number1; //bad practice
