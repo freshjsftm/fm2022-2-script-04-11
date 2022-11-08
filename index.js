@@ -31,12 +31,72 @@
 
 // && повертає останню правду або першу брехню
 // || повертає першу правду або останню брехню
-let string = "";
-let number = 77;
-let userName = "Brad";
-let bool = false;
-let object = null;
-let resultRemainder = number % 5; //2
+// let string = "";
+// let number = 77;
+// let numberStr = '77qwe';
+// let userName = "Brad";
+// let bool = false;
+// let object = null;
+// let resultRemainder = number % 5; //2
 
-let result = number || (userName && object);
-console.log(result); 
+// let result = number || (userName && object);
+// console.log(result);
+
+// ! логічна відмова HI
+// console.log(!object);
+
+// console.log(userName === string);
+// console.log(userName !== string);
+
+// console.log(isNaN(Number(userName)) === isNaN(Number(numberStr)));
+
+// let userName = null;
+// const condition = userName || "";
+
+// if (condition) {
+//   console.log("cabinet");
+// } else {
+//   console.log("sign up");
+// }
+// console.log("main text");
+
+// const userAge = 24;
+// const AGE_ADULT = 18;
+// //вивести yes, якщо людина повнолітня і no, якщо ні
+// if (userAge >= AGE_ADULT) {
+//   console.log("yes");
+// } else {
+//   console.log("no");
+// }
+
+// let number = 46;
+// // even(парне)  odd(непарне)
+// if (number % 2 === 0) {
+//   console.log("even");
+// } else {
+//   console.log("odd");
+// }
+
+// [6..18)
+// const userAge = 14;
+// if () {
+//   console.log('pupil')
+// } else {
+//   console.log('not pupil')
+// }
+
+// const userAge = 13;
+// const minAge = 6;
+// const maxAge = 18;
+
+// if (userAge >= minAge && userAge < maxAge) {
+//   console.log("Puple");
+// } else {
+//   console.log("Not puple");
+// }
+
+// if (userAge < minAge || userAge >= maxAge) {
+//   console.log("Not Puple");
+// } else {
+//   console.log("puple");
+// }
