@@ -1,22 +1,23 @@
-// let userInput1 = prompt("Enter first number: ", 2);
-// let userInput2 = prompt("Enter second number: ", 6);
+let userInput1 = prompt("Enter first number: ", 2);
+let userInput2 = prompt("Enter second number: ", 6);
 
-// let userNumber1 = Number(userInput1);
-// let userNumber2 = Number(userInput2);
+if (checkUserInputNumber(userInput1) && checkUserInputNumber(userInput2)) {
+  const summa = getSumTwoNumbers(Number(userInput1), Number(userInput2));
+  console.log(summa);
+} else {
+  console.log("error");
+}
 
-// if (
-//   userInput1 === "" ||
-//   isNaN(userNumber1) ||
-//   userInput1 === null ||
-//   userInput2 === "" ||
-//   userInput2 === null ||
-//   isNaN(userNumber2)
-// ) {
-//   console.log("error");
-// } else {
-//   let summa = userNumber1 + userNumber2; //8
-//   console.log(summa);
-// }
+function getSumTwoNumbers(val1, val2) {
+  return val1 + val2;
+}
+
+function checkUserInputNumber(value) {
+  if (value === "" || isNaN(value) || value === null) {
+    return false;
+  }
+  return true;
+}
 
 /*
 declaration
@@ -33,7 +34,7 @@ arrow
 const func3 = (argument1, argument2)=>{
   body function
 }
-*/
+
 logStr1();
 function logStr1() {
   console.log("!myFirstFunction!");
@@ -44,3 +45,4 @@ const logStr2 = function(){
   console.log("!mySecondFunction!");
 }
 logStr2()
+*/
