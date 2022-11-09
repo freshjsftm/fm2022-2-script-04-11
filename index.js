@@ -1,102 +1,46 @@
-// let condition = true;
-// console.log(condition);
+// let userInput1 = prompt("Enter first number: ", 2);
+// let userInput2 = prompt("Enter second number: ", 6);
 
-// let number1 = 12;
-// let number2 = 12;
+// let userNumber1 = Number(userInput1);
+// let userNumber2 = Number(userInput2);
 
-// console.log(number1, ' > ', number2, ' = ', number1 > number2);//false
-// console.log(number1, ' >= ', number2, ' = ', number1 >= number2);//true
-// console.log(number1, ' < ', number2, ' = ', number1 < number2);//false
-// console.log(number1, ' <= ', number2, ' = ', number1 <= number2);//true
-
-// let string1 = 'talse';
-// let string2 = 'false';
-// console.log(string1, ' > ', string2, ' = ', string1 > string2);
-
-//false undefined NaN '' null  0/-0
-
-// //логічне множення  І  &&
-// //повертає останню правду або першу брехню
-// console.log(true, ' && ', true, ' = ', true && true);//true
-// console.log(true, ' && ', false, ' = ', true && false);//false
-// console.log(false, ' && ', true, ' = ', false && true);//false
-// console.log(false, ' && ', false, ' = ', false && false);//false
-
-// //логічне додавання  АБО  ||
-// //повертає першу правду або останню брехню
-// console.log(true, ' || ', true, ' = ', true || true);//true
-// console.log(true, ' || ', false, ' = ', true || false);//true
-// console.log(false, ' || ', true, ' = ', false || true);//true
-// console.log(false, ' || ', false, ' = ', false || false);//false
-
-// && повертає останню правду або першу брехню
-// || повертає першу правду або останню брехню
-// let string = "";
-// let number = 77;
-// let numberStr = '77qwe';
-// let userName = "Brad";
-// let bool = false;
-// let object = null;
-// let resultRemainder = number % 5; //2
-
-// let result = number || (userName && object);
-// console.log(result);
-
-// ! логічна відмова HI
-// console.log(!object);
-
-// console.log(userName === string);
-// console.log(userName !== string);
-
-// console.log(isNaN(Number(userName)) === isNaN(Number(numberStr)));
-
-// let userName = null;
-// const condition = userName || "";
-
-// if (condition) {
-//   console.log("cabinet");
+// if (
+//   userInput1 === "" ||
+//   isNaN(userNumber1) ||
+//   userInput1 === null ||
+//   userInput2 === "" ||
+//   userInput2 === null ||
+//   isNaN(userNumber2)
+// ) {
+//   console.log("error");
 // } else {
-//   console.log("sign up");
-// }
-// console.log("main text");
-
-// const userAge = 24;
-// const AGE_ADULT = 18;
-// //вивести yes, якщо людина повнолітня і no, якщо ні
-// if (userAge >= AGE_ADULT) {
-//   console.log("yes");
-// } else {
-//   console.log("no");
+//   let summa = userNumber1 + userNumber2; //8
+//   console.log(summa);
 // }
 
-// let number = 46;
-// // even(парне)  odd(непарне)
-// if (number % 2 === 0) {
-//   console.log("even");
-// } else {
-//   console.log("odd");
-// }
+/*
+declaration
+function func1(argument1, argument2){
+  body function
+}
 
-// [6..18)
-// const userAge = 14;
-// if () {
-//   console.log('pupil')
-// } else {
-//   console.log('not pupil')
-// }
+expression
+const func2 = function(argument1, argument2){
+  body function
+}
 
-// const userAge = 13;
-// const minAge = 6;
-// const maxAge = 18;
+arrow
+const func3 = (argument1, argument2)=>{
+  body function
+}
+*/
+logStr1();
+function logStr1() {
+  console.log("!myFirstFunction!");
+}
+logStr1();
 
-// if (userAge >= minAge && userAge < maxAge) {
-//   console.log("Puple");
-// } else {
-//   console.log("Not puple");
-// }
-
-// if (userAge < minAge || userAge >= maxAge) {
-//   console.log("Not Puple");
-// } else {
-//   console.log("puple");
-// }
+const logStr2 = function(){
+  console.log("!mySecondFunction!");
+}
+logStr2()
