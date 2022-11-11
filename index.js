@@ -1,62 +1,71 @@
-// const getTextOddOrEven = function (value) {
-//   if (value % 2 === 0) {
-//     return "even";
-//   }
-//   return "odd";
-// };
-// console.log(getTextOddOrEven(5))
+const userInput = Number("9"); //Number(prompt('Enter number'))
+//debugger
+if (userInput % 7 === 0) {
+  console.log("7");
+} else if (userInput % 5 === 0) {
+  console.log("5");
+} else if (userInput % 3 === 0) {
+  console.log("3");
+} else if (userInput % 2 === 0) {
+  console.log("2");
+} else {
+  console.log("1");
+}
 
-// /*
-//    condition ? true : false
-//    (value % 2 === 0) ? "even" : "odd"
-// */
+if (userInput % 7 === 0) {
+  console.log("7");
+} else {
+  if (userInput % 5 === 0) {
+    console.log("5");
+  } else {
+    if (userInput % 3 === 0) {
+      console.log("3");
+    } else {
+      if (userInput % 2 === 0) {
+        console.log("2");
+      } else {
+        if (userInput % 1 === 0) {
+          console.log("1");
+        }
+      }
+    }
+  }
+}
 
-// const getTextOddOrEven2 = function (value) {
-//   // const result = (value % 2 === 0) ? "even" : "odd";
-//   // return result;
-//   return (value % 2 === 0) ? "even" : "odd";
-// };
-// console.log(getTextOddOrEven2(5))
+const lang = prompt("Choose lang:\n1 - ua\n2 - en\n3 - fr\n4 - ro");
+//debugger
+switch (lang) {
+  case "1":
+  case "ua":
+  case "UA":
+    console.log("привіт");
+    break;
+  case "2":
+  case "en":
+    console.log("hi");
+    break;
+  case 3:
+  case "fr":
+    console.log("Hé");
+    break;
+  case "4":
+  case "ro":
+    console.log("O zi buna!");
+    break;
+  default:
+    console.log("404 try again");
+    break;
+}
+console.log("switch end");
 
-// // написати функцію яка повертає текст 'adult' || 'no adult' 
-// //в залежності від прийнятого аргументу (число)
-
-// const getAge = function (val, AGE_ADULT = 18) {
-//   return val >= AGE_ADULT  ? "adult" : "no adult";
-// };
-
-
-
-// функція всередині себе запитує у користувача ввод будь-чого
-// і повертає текст  'thanks' або 'try again'
-
-// const getTextFromUser = function () {
-//   const inputUser = prompt('Enter something');
-//   return inputUser ===null || inputUser==='' ? 'try again' : 'thanks' ;
+// if (lang === "1" || lang === "ua") {
+//   console.log("привіт");
+// } else if (lang === "2" || lang === "en") {
+//   console.log("hi");
+// } else if (lang === "3" || lang === "fr") {
+//   console.log("Hé");
+// } else if (lang === "4" || lang === "ro") {
+//   console.log("O zi buna!");
+// } else {
+//   console.log("404 try again");
 // }
-// console.log(getTextFromUser())
-
-function answerToUser() {
-  const userInput = prompt("Enter something");
-  return userInput === null || userInput === '' ? "Try again" : "Thank you";
-}
-console.log(answerToUser());
-
-
-const userComplete = function(){
-  return prompt('Answer a guestion') ? 'thanks' : 'try again'
-}
-console.log(userComplete());
-
-
-
-// const f1 = function(){}
-// const f2 = function(){}
-
-// const resF = 5>2 ? f1 : f2;
-
-
-// const summa = 16678;
-// const sale = summa>10000 ? 20 : 
-//              summa>5000 ? 10 : 5;
-
