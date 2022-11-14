@@ -1,71 +1,59 @@
-const userInput = Number("9"); //Number(prompt('Enter number'))
-//debugger
-if (userInput % 7 === 0) {
-  console.log("7");
-} else if (userInput % 5 === 0) {
-  console.log("5");
-} else if (userInput % 3 === 0) {
-  console.log("3");
-} else if (userInput % 2 === 0) {
-  console.log("2");
-} else {
-  console.log("1");
-}
-
-if (userInput % 7 === 0) {
-  console.log("7");
-} else {
-  if (userInput % 5 === 0) {
-    console.log("5");
-  } else {
-    if (userInput % 3 === 0) {
-      console.log("3");
-    } else {
-      if (userInput % 2 === 0) {
-        console.log("2");
-      } else {
-        if (userInput % 1 === 0) {
-          console.log("1");
-        }
-      }
-    }
+function calculate(num1 = 10, num2 = 2, operator = "+") {
+  if (isNaN(num1 - num2)) {
+    return null;
   }
+  let f = null;
+  switch (operator) {
+    case "+":
+      f = summa;
+      break;
+    case "-":
+      f = substr;
+      break;
+    case "/":
+      f = div;
+      break;
+    case "*":
+      f = mult;
+      break;
+    case "%":
+      f = rem;
+      break;
+    default:
+      f = null;
+      break;
+  }
+  if(typeof f === 'function'){
+    return f(num1, num2) 
+  }
+  return null;
+}
+const rem = function (num1, num2) {
+  return num1 % num2;
+};
+const summa = function (num1, num2) {
+  return num1 + num2;
+};
+const substr = function (num1, num2) {
+  return num1 - num2;
+};
+const mult = function (num1, num2) {
+  return num1 * num2;
+};
+const div = function (num1, num2) {
+  return num1 / num2;
+};
+
+const result = calculate(15, undefined, "-");
+console.log(result);
+
+const getPerimetrRectangle = function(side1, side2){
+  return summa(side1,side2)*2;
 }
 
-const lang = prompt("Choose lang:\n1 - ua\n2 - en\n3 - fr\n4 - ro");
 //debugger
-switch (lang) {
-  case "1":
-  case "ua":
-  case "UA":
-    console.log("привіт");
-    break;
-  case "2":
-  case "en":
-    console.log("hi");
-    break;
-  case 3:
-  case "fr":
-    console.log("Hé");
-    break;
-  case "4":
-  case "ro":
-    console.log("O zi buna!");
-    break;
-  default:
-    console.log("404 try again");
-    break;
+const hightOrderFunction = function(val1, val2, func){
+  return func(val1, val2)
 }
-console.log("switch end");
 
-// if (lang === "1" || lang === "ua") {
-//   console.log("привіт");
-// } else if (lang === "2" || lang === "en") {
-//   console.log("hi");
-// } else if (lang === "3" || lang === "fr") {
-//   console.log("Hé");
-// } else if (lang === "4" || lang === "ro") {
-//   console.log("O zi buna!");
-// } else {
-//   console.log("404 try again");
-// }
+console.log(hightOrderFunction(7,5,mult))
