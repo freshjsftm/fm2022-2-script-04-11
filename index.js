@@ -1,48 +1,70 @@
-//1950-2030
-// Високосный год кратен 4, но при этом не кратен 100, либо кратен 400. Иными словами, если год делится на 4 без остатка, но делится на 100 только с остатком, то он високосный, иначе — невисокосный, кроме случая, если он делится без остатка на 400 — тогда он всё равно високосный.
+//const nameProduct = 't-short';
+// // const priceProduct = 456;
 
-const START_DIAPAZON = 2190;
-const END_DIAPAZON = 2210;
+// // const product1 = new Object();
+// // const product2 = Object();
 
-for (let year = START_DIAPAZON; year <= END_DIAPAZON; year++) {
-  if(year%4===0 && year%100 !==0 || year%400===0){
-    console.log(year)
-  }
+// const product = {
+//   //key:value,
+//   name: "t-short",
+//   price: 45.6,
+//   currency: "$",
+//   isHas: true,
+//   amount: 12,
+//   size: undefined,
+//   pocket: null,
+//   logProduct: function () {
+//     console.log("name:", this.name);
+//   },
+// };
+// console.log(product.color);
+// product.color = "red";
+// delete product.size;
+// product.logProduct();
+
+// //об'єкт країна Україна: назва, площа, населення
+// //метод логує густина населення (населення/площа)
+
+// const countryUkraine = {
+//   name: "Ukraine",
+//   population: 43815000,
+//   area: 603700,
+//   getDencity: function () {
+//     console.log("howmany", this.population / this.area);
+//   },
+// };
+// console.log(countryUkraine);
+// countryUkraine.area++
+// countryUkraine.getDencity()
+
+// const countryPoland = {
+//   name: "Poland",
+//   population: 53815000,
+//   area: 503700,
+//   getDencity: function () {
+//     console.log("howmany", this.population / this.area);
+//   },
+// };
+// console.log(countryPoland);
+// countryPoland.area++
+// countryPoland.getDencity();
+
+function Country(name, area, population) {
+  this.name = name;
+  this.area = area;
+  this.population = population;
+  this.getDencity = function () {
+    console.log("howmany", this.population / this.area);
+  };
 }
-в зворотньому порядку вивести
-for (let year = END_DIAPAZON; year >= START_DIAPAZON; year--) {
-  if(year%4===0 && year%100 !==0 || year%400===0){
-    console.log(year)
-  }
-}
 
-//написати функцію, яка запитує в користувача число до тих пір, доки він його не введе
-//функція брудна, нічого не приймає, а повертає виключно коректне число числового типу!!!!!!
-// continue
-//в циклі
-//1 - запитую в користувача
-//2 - перевіряємо:
-//  а)  якщо введене є числом - виходимо і повертаємо число
-//  б)  якщо введене є помилкою - переходимо до наступної     ітерації, в іншому випадку повертаємо число
+const countryUkraine = new Country("Ukraine", 603700, 43815000);
+console.log(countryUkraine);
+countryUkraine.getDencity();
 
-const enterYourNumber = function () {
-  while (true) {
-    const num = prompt("enter your number");
-    if (isNaN(Number(num)) || num === null || num === "" || num === " ") {
-      continue;
-    }
-    return Number(num);
-  }
-};
-console.log(enterYourNumber());
+const countryPoland = new Country("Poland", 503700, 53815000);
+console.log(countryPoland);
+countryPoland.getDencity();
 
 
-const enterYourNumber2 = function () {
-  while (true) {
-    const num = prompt("enter your number");
-    if (isNaN(Number(num))===false && num !== null && num !== "" && num !== " ") {
-      return Number(num);
-    } 
-  }
-};
-console.log(enterYourNumber2());
+
