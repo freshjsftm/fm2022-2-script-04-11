@@ -1,49 +1,26 @@
-const num1 = 12;
-const num2 = 45;
+// '4 * 5 = ':20
 
-// while(true){
-//   //const userInput = prompt(num1 +' + ' + num2 + ' = ');
-//   const userInput = prompt(`enter answer:
-//   ${num1} + ${num2} = `);
-//   if(Number(userInput) === num1+num2){
-//     console.log('Good!')
-//     break;
+// function getMultipleTable(num = 4) {
+//   const table = {};
+//   for (let mult = 1; mult < 10; mult++) {
+//     table[`${num} * ${mult} = `] = num * mult;
 //   }
+//   return table;
+// }
+function getMultipleTable(min = 1, max = 10) {
+  const table = {};
+  for (let num = min; num < max; num++) {
+    for (let mult = 1; mult < 10; mult++) {
+      table[`${num} * ${mult} = `] = num * mult;
+    }
+  }
+  return table;
+}
+const resultTable = getMultipleTable();
+
+// for (const key in resultTable) {
+//   console.log(key, resultTable[key]);
 // }
 
-const product = {
-  name: "dress",
-  price: 123.44,
-  currency: "uah",
-  showInfo: function () {
-    return `product name: ${this.name}
-price: ${this.currency} ${this.price}`;
-  },
-  "favorit color": "red",
-  45:40005,
-  100:001
-};
-
-for (const key in product) {
-  console.log(`product.${key} = ${product[key]}`);
-}
-console.log('key' in product)
-console.log('100' in product)
-console.log('getInfo' in product)
-
-
-
-// console.log("product color: ", product["favorit color"]);
-// console.log("product 45: ", product["45"]);
-// console.log("product 45: ", product[45]);
-// console.log("product name: ", product['name']);
-
-// const key = 'name'
-// console.log(`product.${key} = ${product[key]}`);
-
-
-// const selectProduct = product; //copy address
-// selectProduct.currency = "$";
-// console.log("selectProduct: ", selectProduct);
-// console.log("product: ", product);
-// selectProduct.amount = 100;
+const example = prompt("4 * 5 = ", "4 * 5 = ");
+console.log(resultTable[example]);
