@@ -1,7 +1,6 @@
 function MyArrayPrototype() {
   this.push = function (value) {
-    this[this.length] = value;
-    this.length++;
+    this[this.length++] = value;
     return this.length;
   };
 }
@@ -11,5 +10,9 @@ function MyArray() {
 }
 
 MyArray.prototype = new MyArrayPrototype();
+
+
+const myArr = new MyArray();
+myArr.push(12);
 
 
