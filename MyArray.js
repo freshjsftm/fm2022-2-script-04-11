@@ -12,8 +12,4 @@ function MyArray() {
 
 MyArray.prototype = new MyArrayPrototype();
 
-const array = []; //instance
-console.log(array);
 
-const myArray = new MyArray();
-console.log(myArray);
