@@ -1,26 +1,20 @@
-// '4 * 5 = ':20
+// const colors = {
+//   0: "red",
+//   1: "lime",
+//   2: "blue",
+//   3: "teal",
+// };
 
-// function getMultipleTable(num = 4) {
-//   const table = {};
-//   for (let mult = 1; mult < 10; mult++) {
-//     table[`${num} * ${mult} = `] = num * mult;
-//   }
-//   return table;
-// }
-function getMultipleTable(min = 1, max = 10) {
-  const table = {};
-  for (let num = min; num < max; num++) {
-    for (let mult = 1; mult < 10; mult++) {
-      table[`${num} * ${mult} = `] = num * mult;
-    }
-  }
-  return table;
-}
-const resultTable = getMultipleTable();
+// //console.log(colors[2])
 
-// for (const key in resultTable) {
-//   console.log(key, resultTable[key]);
+// //add new colors
+// colors[4] = 'white'
+// colors[5] = 'pink'
+
+// for (const key in colors) {
+//   console.log(colors[key])
 // }
 
-const example = prompt("4 * 5 = ", "4 * 5 = ");
-console.log(resultTable[example]);
+const array1 = ["red","lime","blue","teal"];
+const array2 = new Array("red","lime","blue","teal");
+const array3 = new Array(5);
