@@ -1,32 +1,18 @@
-// const array = []; //instance
-// console.log(array);
-
-// const myArray = new MyArray();
-// console.log(myArray);
-
-const funcForMan = {
-  sleep: function(){
-    console.log(this.name, 'sleeping')
-  },
-  eat: function(){
-    console.log(this.name, 'eating')
-  },
-  buy: function(){
-    console.log(this.name, 'buy')
+//об'єкт з логікою
+function FuncForUser(){
+  this.fullName = function(){
+    return `${this.fname} ${this.lname}`;
   }
 }
 
-const man = {
-  name: 'Bred',
-  sname: 'Pitt',
-  gender: 'male',
-  age: 58
+//об'єкт з данними
+function User(fname, lname){
+  this.fname = fname;
+  this.lname = lname;
 }
 
-man.__proto__ = funcForMan;
+//пов'язуємо
+User.prototype = new FuncForUser();
 
-const user = {
-  name:'Alan',
-  role:'client'
-}
-user.__proto__ = funcForMan;
+const user = new User('Brad', 'Pitt');
+const user2 = new User('Tom', 'Rot');
