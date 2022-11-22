@@ -1,19 +1,17 @@
-const languages = ["en", "ua", "fr", "fr", "pl", "ua"];
-
-//join
-const string = languages.join('');
-
-//написати функцію, яка приймає масив, і повертає true, якщо в масиві є два однакових значення, які ідуть поспіль, інакше - повертає false
-
-function checkKeysInRow(array) {
-  //для кожного елементу треба зробити наступну перевірку
-  for (let index = 0; index < array.length; index++) {
-    // поточний === наступний
-    if (array[index] === array[index + 1]) {
-      //якщо правда то завершити роботу і повернути true
-      return true;
-    }
+function sum(){
+  console.log(arguments)// властивість функції
+  let resultSumma = 0;
+  for (let i = 0; i < arguments.length; i++) {
+    resultSumma += arguments[i]
   }
-  //якщо дійшли до кінця масиву і не знайшли поспіль однакових, то повертаємо false  
-  return false;
+  return resultSumma
 }
+//console.dir(sum)
+//console.log(sum(1,2,3,4,5));
+
+
+// функція приймає безліч приймає безліч аргументів і повертає масив, в якому будуть тільки парні значення з переданих аргументів, якщо таких не має - то пустий масив
+// getEvenArray(1,2,3,4) => [2,4]
+// getEvenArray(1,5) => []
+// getEvenArray(6,2,13,4,5,8) => [6,2,4,8]
+
