@@ -1,17 +1,20 @@
-/**
- * @params {function}
- * @params {any}
- */
-const sayWord = function (howSay, whatSay) {
-  howSay(whatSay);
-};
+const nums = [1, 25, 6, 5, 9, 4, 8];
 
-//sayWord(alert, 456)
-//sayWord(console.log, 'hi')
-
-const nums = [1, 5,4, 3];
-function checkOdd(item) {
-  return item % 2 === 1;
+function getSquareNumber(n) {
+  console.log(n * n);
+  return n * n;
 }
-const result1 = nums.every(checkOdd);
-const result2 = nums.some(checkOdd);
+
+for (let index = 0; index < nums.length; index++) {
+  //getSquareNumber(nums[index]);
+}
+
+//nums.forEach(getSquareNumber);
+
+//nums.forEach(function(n){console.log(n*n*n)})
+
+const evenNums = nums.filter(function(item){return item%2===0;})
+// console.log(evenNums)
+// console.log(nums)
+
+const newArrNums = nums.map(getSquareNumber)
