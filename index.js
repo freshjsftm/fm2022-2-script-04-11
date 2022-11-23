@@ -1,20 +1,15 @@
-const nums = [1, 25, 6, 5, 9, 4, 8];
+const nums = [1, 25,25,405, 6, 54, 9, 4, 8];
 
-function getSquareNumber(n) {
-  console.log(n * n);
-  return n * n;
-}
+nums.sort(function (current, next) {
+  if(current === next){
+    return 0;
+  }
+  return (current < next) ? -1 : 1;
+});
+// nums.sort(); //Unicode
+console.log(nums);
 
-for (let index = 0; index < nums.length; index++) {
-  //getSquareNumber(nums[index]);
-}
 
-//nums.forEach(getSquareNumber);
-
-//nums.forEach(function(n){console.log(n*n*n)})
-
-const evenNums = nums.filter(function(item){return item%2===0;})
-// console.log(evenNums)
-// console.log(nums)
-
-const newArrNums = nums.map(getSquareNumber)
+const languages = ['ua','fr', 'en', 'pl', 'es'];
+languages.sort().reverse();
+console.log(languages);
