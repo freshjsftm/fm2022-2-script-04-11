@@ -1,15 +1,30 @@
-const nums = [1, 25,25,405, 6, 54, 9, 4, 8];
-
-nums.sort(function (current, next) {
-  if(current === next){
-    return 0;
+const nums = [5, 25, 8];
+//реалізація reduce без initialValue
+function getSum(array) {
+  let summa = array[0];
+  for (let index = 1; index < array.length; index++) {
+    summa = summa + array[index];
   }
-  return (current < next) ? -1 : 1;
+  return summa;
+}
+console.log(getSum(nums));
+
+//реалізація reduce з initialValue
+function getSum2(array, initialValue) {
+  let summa = initialValue;
+  for (let index = 0; index < array.length; index++) {
+    summa = summa + array[index];
+  }
+  return summa;
+}
+console.log(getSum2(nums, 1000));
+
+const result1 = nums.reduce(function (summa, currentItem) {
+  return summa + currentItem;
 });
-// nums.sort(); //Unicode
-console.log(nums);
+console.log(result1);
 
-
-const languages = ['ua','fr', 'en', 'pl', 'es'];
-languages.sort().reverse();
-console.log(languages);
+const result2 = nums.reduce(function (summa, currentItem) {
+  return summa + currentItem;
+}, 1000);
+console.log(result2);
