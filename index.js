@@ -1,30 +1,23 @@
-const nums = [5, 25, 8];
-//реалізація reduce без initialValue
-function getSum(array) {
-  let summa = array[0];
-  for (let index = 1; index < array.length; index++) {
-    summa = summa + array[index];
-  }
-  return summa;
+//маємо два масиви однакової довжини, з яких треба створити один
+//умова записати елементи у шаховому порядку
+// [1,2,3] [4,5,6] => [1,4,2,5,3,6]
+//якщо довжина різна, то елементи довшого масиву записуємо в кінець
+
+const arr1 = [1, 3, 4, 9, 6, 3];
+const arr2 = [1, 6, 7, 4, 9, 6, 3,77,77];
+
+const arr3 = [];
+for (let i = 0; i < arr1.length && i < arr2.length; i++) {
+  arr3.push(arr1[i], arr2[i]);
 }
-console.log(getSum(nums));
-
-//реалізація reduce з initialValue
-function getSum2(array, initialValue) {
-  let summa = initialValue;
-  for (let index = 0; index < array.length; index++) {
-    summa = summa + array[index];
+if(arr1.length>arr2.length){
+  for (let i = arr2.length; i < arr1.length ; i++) {
+    arr3.push(arr1[i]);
   }
-  return summa;
+}else if(arr1.length<arr2.length){
+  for (let i = arr1.length; i < arr2.length ; i++) {
+    arr3.push(arr2[i]);
+  }
 }
-console.log(getSum2(nums, 1000));
 
-const result1 = nums.reduce(function (summa, currentItem) {
-  return summa + currentItem;
-});
-console.log(result1);
-
-const result2 = nums.reduce(function (summa, currentItem) {
-  return summa + currentItem;
-}, 1000);
-console.log(result2);
+console.log(arr3);
