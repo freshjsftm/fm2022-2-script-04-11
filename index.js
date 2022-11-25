@@ -1,50 +1,43 @@
-//маємо два масиви однакової довжини, з яких треба створити один
-//умова записати елементи у шаховому порядку
-// [1,2,3] [4,5,6] => [1,4,2,5,3,6]
-//якщо довжина різна, то елементи довшого масиву записуємо в кінець
+"use strict";
 
-const arr1 = [1, 3];
-const arr2 = [2, 6, 4, 9, 6, 123];
+//window.alert(12)
 
-//3 variant
-const arr3 = [];
-for (let i = 0; i < arr1.length || i < arr2.length; i++) {
-  (i < arr1.length && i < arr2.length)
-    ? arr3.push(arr1[i], arr2[i])
-    : arr3.push(arr1[i] || arr2[i]);
+const cat = {
+  name: "Mucha",
+  sleeping: function () {
+    console.log("sleeping", this);
+    return `${this.name} sleeping`;
+  },
+};
+//console.log(cat.sleeping())
+//f1()
+function f1() {
+  console.log("f1", this);
 }
+// f1()
+// console.dir(f1)
 
-//1 variant
-// if(arr1.length>arr2.length){
-//   for (let i = arr2.length; i < arr1.length ; i++) {
-//     arr3.push(arr1[i]);
-//   }
-// }else if(arr1.length<arr2.length){
-//   for (let i = arr1.length; i < arr2.length ; i++) {
-//     arr3.push(arr2[i]);
-//   }
-// }
-//2 variant
-// if (arr1.length !== arr2.length) {
-//   for (
-//     let i = arr1.length > arr2.length ? arr2.length : arr1.length;
-//     i < arr2.length || i < arr1.length;
-//     i++
-//   ) {
-//     arr3.push(arr2[i] || arr1[i]);
-//   }
-// }
+const f2 = function () {
+  console.log("f2", this);
+};
+// f2()
+// console.dir(f2)
 
-console.log(arr3);
+const f3 = () => {
+  console.log("f3", this);
+};
+// f3()
+// console.dir(f3)
 
+const site = {
+  title: "My site",
+  headers: ["Home", "About", "Contacts"],
+  showHeaders: function () {
+    this.headers.forEach((header) => {
+      console.log(this.title);
+      console.log(header);
+    });
+  },
+};
 
-const getArrayFromTwoArrays = function (arr1, arr2){
-  const arr3 = [];
-  for (let i = 0; i < arr1.length || i < arr2.length; i++) {
-    (i < arr1.length && i < arr2.length)
-      ? arr3.push(arr1[i], arr2[i])
-      : arr3.push(arr1[i] || arr2[i]);
-  }
-  return arr3;
-}
-
+site.showHeaders();
