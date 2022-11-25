@@ -29,6 +29,7 @@ const f3 = () => {
 // f3()
 // console.dir(f3)
 
+//arrow
 const site = {
   title: "My site",
   headers: ["Home", "About", "Contacts"],
@@ -39,5 +40,46 @@ const site = {
     });
   },
 };
+//site.showHeaders();
 
-site.showHeaders();
+//зберігаємо this у змінну - копія за посиланням
+const site2 = {
+  title: "My site 2",
+  headers: ["Home2", "About2", "Contacts2"],
+  showHeaders: function () {
+    //this
+    const that = this; //const self = this;
+    this.headers.forEach(function (header) {
+      console.log(that.title);
+      console.log(header);
+    });
+  },
+};
+//site2.showHeaders();
+
+// через передачу контексту методу масиву
+const site3 = {
+  title: "My site 3",
+  headers: ["Home", "About", "Contacts"],
+  showHeaders: function () {
+    this.headers.forEach(function (header) {
+      console.log(this.title);
+      console.log(header);
+    }, this);
+  },
+};
+//site3.showHeaders();
+
+//bind
+function showHeaders(header) {
+  console.log(this.title);
+  console.log(header);
+}
+const site4 = {
+  title: "My site 4",
+  headers: ["Home", "About", "Contacts"],
+  showHeaders: function () {
+    this.headers.forEach(showHeaders.bind(this));
+  },
+};
+site4.showHeaders();
