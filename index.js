@@ -1,41 +1,26 @@
 "use strict";
 
-//const sum = (n1, n2) => {return n1+n2;}
-//переписати функцію sum, щоб вона приймала безліч аргументів і повертала значення суми
-const sum = (n1, n2) => n1 + n2;
-
 const sumArgs1 = (...numbers) => {
   let resultSumma = 0;
-  for (let i = 0; i < numbers.length; i++) {
-    resultSumma += numbers[i]
-  }
-  // numbers.forEach((number) => {
-  //   return (resultSumma += number);
-  // });
+  numbers.forEach((number) => {
+    return (resultSumma += number);
+  });
   return resultSumma;
 };
-const sumArgs2 = (initial=0, ...numbers) =>
+const sumArgs2 = (initial = 0, ...numbers) =>
   numbers.reduce((result, number) => result + number, initial);
 
-console.log(sumArgs2(undefined, 4,5,6))  
+//console.log(sumArgs2(undefined, 4, 5, 6));
 
+const arrNumbers1 = [1, 2, 3,2];
+const arrNumbers2 = [1, 2];
 
-const square = (n) => n * n;
+const arrNumbers3 = [...arrNumbers1, 4, ...arrNumbers2];
 
-const retHi = () => {
-  console.log("hi");
-  return "hi";
-};
-//rest
-function test1(...rest) {
-  console.log(rest);
-  //console.log(arguments);
-}
-test1(1, 2, 3, 4, 5, 6);
-const test2 = (...args) => {
-  console.log(args);
-};
-test2(1, 2, 3);
+console.log(sumArgs2(1000, ...arrNumbers1, 12, ...arrNumbers2));
 
-// console.dir(test1)
-// console.dir(test2)
+console.log(Math.max(...arrNumbers1))
+
+//отримати останній індекс максимального значення в масиві
+console.log(arrNumbers1.lastIndexOf(Math.max(...arrNumbers1)))
+
