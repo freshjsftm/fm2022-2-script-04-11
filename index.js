@@ -1,85 +1,41 @@
 "use strict";
 
-//window.alert(12)
+//const sum = (n1, n2) => {return n1+n2;}
+//переписати функцію sum, щоб вона приймала безліч аргументів і повертала значення суми
+const sum = (n1, n2) => n1 + n2;
 
-const cat = {
-  name: "Mucha",
-  sleeping: function () {
-    console.log("sleeping", this);
-    return `${this.name} sleeping`;
-  },
+const sumArgs1 = (...numbers) => {
+  let resultSumma = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    resultSumma += numbers[i]
+  }
+  // numbers.forEach((number) => {
+  //   return (resultSumma += number);
+  // });
+  return resultSumma;
 };
-//console.log(cat.sleeping())
-//f1()
-function f1() {
-  console.log("f1", this);
+const sumArgs2 = (initial=0, ...numbers) =>
+  numbers.reduce((result, number) => result + number, initial);
+
+console.log(sumArgs2(undefined, 4,5,6))  
+
+
+const square = (n) => n * n;
+
+const retHi = () => {
+  console.log("hi");
+  return "hi";
+};
+//rest
+function test1(...rest) {
+  console.log(rest);
+  //console.log(arguments);
 }
-// f1()
-// console.dir(f1)
-
-const f2 = function () {
-  console.log("f2", this);
+test1(1, 2, 3, 4, 5, 6);
+const test2 = (...args) => {
+  console.log(args);
 };
-// f2()
-// console.dir(f2)
+test2(1, 2, 3);
 
-const f3 = () => {
-  console.log("f3", this);
-};
-// f3()
-// console.dir(f3)
-
-//arrow
-const site = {
-  title: "My site",
-  headers: ["Home", "About", "Contacts"],
-  showHeaders: function () {
-    this.headers.forEach((header) => {
-      console.log(this.title);
-      console.log(header);
-    });
-  },
-};
-//site.showHeaders();
-
-//зберігаємо this у змінну - копія за посиланням
-const site2 = {
-  title: "My site 2",
-  headers: ["Home2", "About2", "Contacts2"],
-  showHeaders: function () {
-    //this
-    const that = this; //const self = this;
-    this.headers.forEach(function (header) {
-      console.log(that.title);
-      console.log(header);
-    });
-  },
-};
-//site2.showHeaders();
-
-// через передачу контексту методу масиву
-const site3 = {
-  title: "My site 3",
-  headers: ["Home", "About", "Contacts"],
-  showHeaders: function () {
-    this.headers.forEach(function (header) {
-      console.log(this.title);
-      console.log(header);
-    }, this);
-  },
-};
-//site3.showHeaders();
-
-//bind
-function showHeaders(header) {
-  console.log(this.title);
-  console.log(header);
-}
-const site4 = {
-  title: "My site 4",
-  headers: ["Home", "About", "Contacts"],
-  showHeaders: function () {
-    this.headers.forEach(showHeaders.bind(this));
-  },
-};
-site4.showHeaders();
+// console.dir(test1)
+// console.dir(test2)
