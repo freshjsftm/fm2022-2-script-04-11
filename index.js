@@ -1,26 +1,33 @@
-"use strict";
+//recursion
 
-const sumArgs1 = (...numbers) => {
-  let resultSumma = 0;
-  numbers.forEach((number) => {
-    return (resultSumma += number);
-  });
-  return resultSumma;
-};
-const sumArgs2 = (initial = 0, ...numbers) =>
-  numbers.reduce((result, number) => result + number, initial);
+function recursion(number) {
+  //debugger
+  if (number === 0) {
+    return;
+  }
+  console.log(number);
+  recursion(number - 1);
+}
+//recursion(3);
 
-//console.log(sumArgs2(undefined, 4, 5, 6));
 
-const arrNumbers1 = [1, 2, 3,2];
-const arrNumbers2 = [1, 2];
+/*
+2^4 = 2 * 2^3
+2^3 = 2 * 2^2
+2^2 = 2 * 2^1
+2^1 = 2 * 2^0 
+2^0 = 1       - basic
+*/
 
-const arrNumbers3 = [...arrNumbers1, 4, ...arrNumbers2];
+function power(num, exp){
+  //debugger
+  if(exp===0){
+    return 1n;
+  }
+  return num * power(num, exp-1);
+}
 
-console.log(sumArgs2(1000, ...arrNumbers1, 12, ...arrNumbers2));
+//console.log(power(2n,42000));
 
-console.log(Math.max(...arrNumbers1))
 
-//отримати останній індекс максимального значення в масиві
-console.log(arrNumbers1.lastIndexOf(Math.max(...arrNumbers1)))
 
