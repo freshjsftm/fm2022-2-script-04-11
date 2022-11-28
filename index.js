@@ -19,10 +19,12 @@ function recursion(number) {
 */
 
 /**
- *
+ * calcute power of number
  * @param {number} num
  * @param {number} exp
  * @returns {number}
+ * @throws {TypeError} type must be a number or bigint for num, type must be a number for exp
+ * @throws {RangeError} type must be a positive exp or zero
  */
 function power(num, exp) {
   //debugger
@@ -32,36 +34,57 @@ function power(num, exp) {
   ) {
     throw new TypeError("Type not right!");
   }
-  if(exp<0){
-    throw new Error("Exp must be positive!");
+  if (exp < 0) {
+    throw new RangeError("Exp must be positive!");
   }
   if (exp === 0) {
-    return typeof num === "bigint" ? 1n : 1 ;
+    return typeof num === "bigint" ? 1n : 1;
   }
   return num * power(num, exp - 1);
 }
 
 try {
   console.log("try");
-  console.log(power(2n,4));
-  console.log(power(2,-4));
+  // console.log(power(2n,4));
+  // console.log(power(2,-4));
   power("two", "four");
 } catch (error) {
   console.log("catch");
+  if(error instanceof TypeError){
+    console.log('wrong type');
+  }
+  if(error instanceof RangeError){
+    console.log('wrong value');
+  }
   console.log(error);
 } finally {
   console.log("finally");
 }
-//power('two', 'four');
+// //power('two', 'four');
 
-//console.log(power(2n,42000));
+// //console.log(power(2n,42000));
 
-console.log("other script");
-console.log("other script");
-console.log("other script");
+// console.log("other script");
+// console.log("other script");
+// console.log("other script");
 
 /*
 try{}catch{}
 try{}finally{}
 try{}catch{}finally{}
 */
+
+const inputUser = function () {
+  const input = prompt("Enter anything");
+  if (input === "" || input === null) {
+    throw new RangeError("put something");
+  }
+};
+
+try {
+  inputUser();
+} catch (error) {
+  console.log(error);
+}
+
+console.log("Important script!");
