@@ -1,30 +1,18 @@
 "use strict";
 
-const boolean = new Boolean(1);
-console.log(typeof boolean);
-console.log(boolean);
-console.dir(boolean);
+let str1 = 'Brad';
+const newStr = str1.toUpperCase();
 
-const obj = {};
+str1 = str1.toUpperCase();
 
-//0 '' undefined null false NaN
+const sentence = 'to be or not to be';
 
-if (boolean) {
-  console.log("object", boolean);
-  if(boolean.valueOf()){
-    console.log("true", boolean.valueOf());
-  }else{
-    console.log("false", boolean.valueOf());
-  }
-}else{
-  console.log("error");
-}
+const arrWords = sentence.split('', 2);
+
+console.log(arrWords)
+
+const newSentence = sentence.replace('not', 'yes')
+
+const spaces = '   q   '.trim();
 
 
-const str = '';
-
-if(Boolean(str)){
-  console.log(str, Boolean(str))
-}else{
-  console.log(str, Boolean(str))
-}
