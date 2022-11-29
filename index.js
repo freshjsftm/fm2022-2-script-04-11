@@ -1,16 +1,30 @@
+"use strict";
 
-const obj1 = {};
+const boolean = new Boolean(1);
+console.log(typeof boolean);
+console.log(boolean);
+console.dir(boolean);
 
-const obj2 = new Object();
-const obj3 = Object();
+const obj = {};
 
+//0 '' undefined null false NaN
 
-function User(name){
-  if(!new.target){
-    return new User(name);
+if (boolean) {
+  console.log("object", boolean);
+  if(boolean.valueOf()){
+    console.log("true", boolean.valueOf());
+  }else{
+    console.log("false", boolean.valueOf());
   }
-  this.name = name;
+}else{
+  console.log("error");
 }
 
-const user = new User('Pit');
-const user2 = User('Bob');
+
+const str = '';
+
+if(Boolean(str)){
+  console.log(str, Boolean(str))
+}else{
+  console.log(str, Boolean(str))
+}
