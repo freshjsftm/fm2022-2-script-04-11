@@ -77,6 +77,7 @@ function MyArray() {
     this.push(arguments[i]);
   }
 }
+
 MyArray.prototype = new MyArrayPrototype();
 
 const myArr = new MyArray();
