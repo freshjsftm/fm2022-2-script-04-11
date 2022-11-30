@@ -1,3 +1,5 @@
+'use strict';
+//constructor object
 function User(fname, lname, age){
   this.fname = fname;
   this.lname = lname;
@@ -7,7 +9,7 @@ function User(fname, lname, age){
 User.isUser = function(value){
   return (value instanceof User);
 }
-
+//constructor logic
 function UserPrototype(){
   this.fullName = function(){
     return `${this.fname} ${this.lname}`;
