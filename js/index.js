@@ -15,3 +15,15 @@ class Worker {
 
 const worker1 = new Worker("John", "Mat");
 //console.log(worker1.workRate());
+
+
+
+// const test = {
+//   _prop : 12,
+//   set prop(value){
+//     this._prop = value;
+//   },
+//   get prop(){
+//     return this._prop;
+//   },
+// }

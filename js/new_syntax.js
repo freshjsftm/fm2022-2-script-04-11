@@ -1,10 +1,7 @@
 "use strict";
 
 class UserClasses {
-  #fname;
-  #lname;
-  #age;
-  //constructor object
+
   /**
    *
    * @param {string} fname
@@ -18,33 +15,47 @@ class UserClasses {
     if (typeof lname !== "string") {
       throw new TypeError("lname must be string");
     }
+    this.fname = fname;
+    this._lname = lname;
+    this.age = age;  // setter
+  }
+  //getters & setters
+  get age(){
+    return this._age; // get private
+  }
+  set age(age){
     if (typeof age !== "number") {
       throw new TypeError("age must be number");
     }
-    if (age < 0 || age > 150) {
+    if (age < MIN_AGE || age > MAX_AGE) {
       throw new RangeError("age must 0..150");
     }
-    this.#fname = fname;
-    this.#lname = lname;
-    this.#age = age;
+    this._age = age; //set private
   }
   //constructor logic
   getFullName() {
-    return `${this.#fname} ${this.#lname}`;
+    return `${this._fname} ${this._lname}`;
   }
   isAdult() {
-    return this.#age >= 18;
+    return this._age >= ADULT_AGE;
   }
   //static
 }
 
 try {
+  //debugger
   const persone2 = new UserClasses('Tom', 'Rot', 58);
   //persone2.#age = 45;
-  //console.log(persone2.age);
+  console.log(persone2._age);
   console.log(persone2.getFullName());
   console.log(persone2.isAdult());
+  console.log(persone2.fname);
+  persone2.age = 56; //setter 
+  console.log(persone2.age); //getter
   console.log(persone2);
+  //так як нижче робити не можна!!!!
+  // console.log(persone2._lname);
+  // console.log(persone2._age);
 } catch (error) {
   console.log(error);
 }
