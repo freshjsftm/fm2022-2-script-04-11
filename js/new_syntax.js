@@ -34,7 +34,7 @@ class UserClasses {
   }
   //constructor logic
   getFullName() {
-    return `${this._fname} ${this._lname}`;
+    return `${this.fname} ${this._lname}`;
   }
   isAdult() {
     return this._age >= ADULT_AGE;
@@ -46,7 +46,8 @@ try {
   //debugger
   const persone2 = new UserClasses('Tom', 'Rot', 58);
   //persone2.#age = 45;
-  console.log(persone2._age);
+  //так як нижче робити не можна!!!!
+  //console.log(persone2._age);
   console.log(persone2.getFullName());
   console.log(persone2.isAdult());
   console.log(persone2.fname);
