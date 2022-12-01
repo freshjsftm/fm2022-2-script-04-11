@@ -1,5 +1,11 @@
 "use strict";
 
+// инкапсуляція (абстракція)
+// наслідування
+// поліморфізм
+
+
+
 // class Worker {
 //   constructor(fname, lname, rate = 10, day = 17) {
 //     this.fname = fname;
@@ -48,18 +54,18 @@ class Worker {
   }
 }
 
-try {
-  //console.log((Worker.workday = 8));
-  const worker = new Worker("Tom", "tom", 56, 13);
-  worker.workday = 8;
-  console.log(worker.workday);
-} catch (error) {
-  if (error instanceof TypeError) {
-    console.log("Wrong type");
-  }
-  if (error instanceof RangeError) {
-    console.log("Wrong value");
-  }
-  console.log(error);
-}
+// try {
+//   //console.log((Worker.workday = 8));
+//   const worker = new Worker("Tom", "tom", 56, 13);
+//   worker.workday = 8;
+//   console.log(worker.workday);
+// } catch (error) {
+//   if (error instanceof TypeError) {
+//     console.log("Wrong type");
+//   }
+//   if (error instanceof RangeError) {
+//     console.log("Wrong value");
+//   }
+//   console.log(error);
+// }
 
