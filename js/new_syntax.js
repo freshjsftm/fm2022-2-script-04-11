@@ -1,7 +1,7 @@
 "use strict";
 
 class UserClasses {
-
+  #privateField;
   /**
    *
    * @param {string} fname
@@ -19,6 +19,7 @@ class UserClasses {
     this._lname = lname;
     this.age = age;  // setter
     this.isBan = isBan;
+    this.#privateField = 'privateField';
   }
   //getters & setters
   get age(){

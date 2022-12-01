@@ -1,10 +1,20 @@
 class Moderator extends UserClasses {
+  /**
+   * 
+   * @param {*} fname 
+   * @param {*} lname 
+   * @param {*} age 
+   * @param {*} rating 
+   */
   constructor(fname, lname, age, rating) {
     super(fname, lname, age);
     this.rating = rating;
   }
-  applyMessage() {
-    return "apply message";
+  // applyMessage() {
+  //   return this.#privateField + "apply message";
+  // }
+  showAge(){
+    return this._age;
   }
 }
 
@@ -31,7 +41,7 @@ try {
   const moder = new Moderator("Moder", "Moderator", 55, 4.5);
   moder.qwe = 123;
   console.log(moder.getFullName());
-  console.log(moder);
+  console.log(moder.showAge());
   console.log(moder.applyMessage());
   const admin = new Admin("Ad", "Admin", 22, 5.0, "red");
   console.log(admin.getFullName());
