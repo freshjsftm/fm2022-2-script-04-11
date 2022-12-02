@@ -11,8 +11,12 @@ class Figure {
     }
     this.name = name;
   }
-  getSquare() {}
-  getPerimetr() {}
+  getSquare() {
+    throw new Error("you call method abstract class");
+  }
+  getPerimetr() {
+    throw new Error("you call method abstract class");
+  }
 }
 
 class Circle extends Figure {
@@ -35,7 +39,7 @@ class Circle extends Figure {
     }
     this._diametr = diametr;
     this._radius = diametr / 2;
-    this._length = 2 * Math.PI *(diametr / 2);
+    this._length = 2 * Math.PI * (diametr / 2);
   }
   //поліморфізм
   getSquare() {
@@ -46,12 +50,12 @@ class Circle extends Figure {
   }
 }
 
-class Square extends Figure{
-  constructor(side){
-    super('square');
+class Square extends Figure {
+  constructor(side) {
+    super("square");
     this.side = side;
   }
-  set side(side){
+  set side(side) {
     if (typeof side !== "number") {
       throw new TypeError("Diametr must be number!");
     }
@@ -59,7 +63,9 @@ class Square extends Figure{
       throw new RangeError("Diametr cannot be 0 or less");
     }
     this._side = side;
-    this._diagonal = Math.sqrt(this._side*this._side+this._side*this._side);
+    this._diagonal = Math.sqrt(
+      this._side * this._side + this._side * this._side
+    );
   }
   getSquare() {
     return this._side * this._side;
@@ -69,17 +75,19 @@ class Square extends Figure{
   }
 }
 
-
-
 try {
   const figure1 = new Circle(10);
-  figure1.diametr = 20;
-  //console.log(figure1);
-  //console.log(figure1 instanceof Circle);//true
-  //console.log(figure1 instanceof Figure);//true
-  //console.log(figure1 instanceof Object);//true
-  console.log(figure1.getSquare());
-  console.log(figure1.getPerimetr());
+  const figure2 = new Square(10);
+  console.log(getSquareFigure(figure1));
+  console.log(getSquareFigure(figure2));
+  console.log(getSquareFigure({}));
 } catch (error) {
   console.log(error);
+}
+
+function getSquareFigure(obj) {
+  if (obj instanceof Figure) {
+    return obj.getSquare();
+  }
+  throw new TypeError('Object must be figure!')
 }
