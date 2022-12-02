@@ -78,9 +78,9 @@ class Square extends Figure {
 try {
   const figure1 = new Circle(10);
   const figure2 = new Square(10);
-  console.log(getSquareFigure(figure1));
-  console.log(getSquareFigure(figure2));
-  console.log(getSquareFigure({}));
+  // console.log(getSquareFigure(figure1));
+  // console.log(getSquareFigure(figure2));
+  // console.log(getSquareFigure({}));
 } catch (error) {
   console.log(error);
 }
