@@ -46,6 +46,29 @@ class Circle extends Figure {
   }
 }
 
+class Square extends Figure{
+  constructor(side){
+    super('square');
+    this.side = side;
+  }
+  set side(side){
+    if (typeof side !== "number") {
+      throw new TypeError("Diametr must be number!");
+    }
+    if (side <= 0) {
+      throw new RangeError("Diametr cannot be 0 or less");
+    }
+    this._side = side;
+    this._diagonal = Math.sqrt(this._side*this._side+this._side*this._side);
+  }
+  getSquare() {
+    return this._side * this._side;
+  }
+  getPerimetr() {
+    return 4 * this._side;
+  }
+}
+
 
 
 try {
