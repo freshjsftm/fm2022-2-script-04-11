@@ -1,71 +1,62 @@
 "use strict";
 
 // инкапсуляція (абстракція)
-// наслідування
+// + наслідування
 // поліморфізм
 
-
-
-// class Worker {
-//   constructor(fname, lname, rate = 10, day = 17) {
-//     this.fname = fname;
-//     this.lname = lname;
-//     this.day = day;
-//     this.rate = rate;
-//   }
-
-//   workRate() {
-//     return this.rate * this.day;
-//   }
-// }
-
-// const worker1 = new Worker("John", "Mat");
-//console.log(worker1.workRate());
-
-// const test = {
-//   _prop : 12,
-//   set prop(value){
-//     this._prop = value;
-//   },
-//   get prop(){
-//     return this._prop;
-//   },
-// }
-
-class Worker {
-  constructor(fname, Iname, rate, workday) {
-    this.fname = fname;
-    this.Iname = Iname;
-    this.rate = rate;
-    this.workday = workday;
-  }
-  get workday() {
-    return this._workday;
-  }
-  set workday(workday) {
-    if (typeof workday !== "number") {
-      throw new TypeError("workday must be number");
+class Figure {
+  constructor(name) {
+    if (this.constructor === Figure) {
+      throw new Error("You cannot create instance in abstract class");
     }
+    this.name = name;
+  }
+  getSquare() {}
+  getPerimetr() {}
+}
 
-    if (workday > MAX_DAYS || workday < MIN_DAY) {
-      throw new RangeError("days must be 0...365");
+class Circle extends Figure {
+  /**
+   *
+   * @param {number} diametr
+   */
+  constructor(diametr) {
+    super("circle");
+    this.diametr = diametr; //виклик setter
+  }
+  //инкапсуляція
+  set diametr(diametr) {
+    //перевірка діаметра
+    if (typeof diametr !== "number") {
+      throw new TypeError("Diametr must be number!");
     }
-    this._workday = workday;
+    if (diametr <= 0) {
+      throw new RangeError("Diametr cannot be 0 or less");
+    }
+    this._diametr = diametr;
+    this._radius = diametr / 2;
+    this._length = 2 * Math.PI *(diametr / 2);
+  }
+  //поліморфізм
+  getSquare() {
+    return 2 * Math.PI * this._radius * this._radius;
+  }
+  getPerimetr() {
+    return 2 * Math.PI * this._radius;
   }
 }
 
-// try {
-//   //console.log((Worker.workday = 8));
-//   const worker = new Worker("Tom", "tom", 56, 13);
-//   worker.workday = 8;
-//   console.log(worker.workday);
-// } catch (error) {
-//   if (error instanceof TypeError) {
-//     console.log("Wrong type");
-//   }
-//   if (error instanceof RangeError) {
-//     console.log("Wrong value");
-//   }
-//   console.log(error);
-// }
 
+
+try {
+  const figure1 = new Circle(10);
+  figure1.diametr = 20;
+  //console.log(figure1);
+  //console.log(figure1 instanceof Circle);//true
+  //console.log(figure1 instanceof Figure);//true
+  //console.log(figure1 instanceof Object);//true
+  console.log(figure1.getSquare());
+  console.log(figure1.getPerimetr());
+} catch (error) {
+  console.log(error);
+}

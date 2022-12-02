@@ -13,6 +13,9 @@ class Moderator extends UserClasses {
   // applyMessage() {
   //   return this.#privateField + "apply message";
   // }
+  getFullName() {
+    return `${this.fname} ${this._lname} ,my rating = ${this.rating}`;
+  }
   showAge(){
     return this._age;
   }
