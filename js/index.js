@@ -1,7 +1,24 @@
-'use strict';
+"use strict";
 
-// const arr = [1,[2,2,[3,[4,4,4],3,3],2],1,1,[2,2,2],1,1];
-// console.log(arr);
+const symbol = Symbol("create new symbol"); //uniqueValue
+const symbol1 = Symbol("create new symbol"); //uniqueValue
+// console.log(symbol);
+// console.log(symbol1);
 
-// const arrFlat = arr.flat(1);
-// console.log(arrFlat);
+const obj1 = {
+  login: "qwerty",
+  symbol: 777,
+  [symbol]: "value with key symbol",
+};
+// console.log(obj1);
+// console.log(obj1.symbol);
+// console.log(obj1[symbol]);
+
+// delete obj1[symbol];
+
+const arr = [1,2,3,4,5];
+// console.log(...arr)
+// for (const iterator of arr) {
+//   console.log(iterator)
+// }
+

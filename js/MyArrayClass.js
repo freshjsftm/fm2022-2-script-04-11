@@ -1,5 +1,19 @@
 "use strict";
 
+class MyArrayIterator{
+  constructor(myArrayInstance){
+    this.myArrayInstance = myArrayInstance;
+    this.currentIndexItem = 0;
+  }
+  next(){
+    //додатково описати
+    return {
+      value: this.myArrayInstance[this.currentIndexItem++],
+      done: this.currentIndexItem > this.myArrayInstance.length,
+    }
+  }
+}
+
 class MyArrayClass {
   constructor() {
     this.length = 0;
@@ -111,6 +125,22 @@ class MyArrayClass {
     });
     return result;
   }
+  [Symbol.iterator](){
+    return new MyArrayIterator(this);
+  }
+  // [Symbol.iterator](){
+  //   let i = 0;
+  //   const myArr = this;
+  //   return {
+  //     next(){
+  //       return {
+  //         value:myArr[i++],
+  //         done:i>myArr.length,
+  //       }
+  //     }
+  //   }
+  // }
+
 }
 
 const myArr3 = new MyArrayClass(
@@ -129,4 +159,12 @@ const myArr3 = new MyArrayClass(
 );
 console.log(myArr3)
 const arrMyFlat = myArr3.flat(10)
-console.log(arrMyFlat)
+console.log(...arrMyFlat)
+
+function sum(...rest){
+  return rest.reduce((acc, item)=>acc+item)
+}
+
+for (const iterator of arrMyFlat) {
+  console.log(iterator)
+}
