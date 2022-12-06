@@ -3,7 +3,7 @@
 const arr = [1, 2, 5, 6, 8, 9, 11, 15, 16, 20];
 
 //константна  O(1)
-console.log(arr[3]);
+//console.log(arr[3]);
 
 //лінійна O(n)  indexOf()
 const linearSearch = (arr, key) => {
@@ -17,7 +17,7 @@ const linearSearch = (arr, key) => {
   }
   return -1;
 };
-console.log(linearSearch(arr, 7));
+//console.log(linearSearch(arr, 7));
 
 //квадратична O(n^2)
 const createTableMult = (limit) => {
@@ -31,7 +31,7 @@ const createTableMult = (limit) => {
   }
   return tableMult;
 };
-console.log(createTableMult(200));
+//console.log(createTableMult(200));
 
 //логаріфмічна O(log(n))
 const binarySearch = (arr, key)=>{
@@ -51,4 +51,4 @@ const binarySearch = (arr, key)=>{
   }
   return -1;
 }
-console.log(binarySearch(arr, 2));
+//console.log(binarySearch(arr, 2));
