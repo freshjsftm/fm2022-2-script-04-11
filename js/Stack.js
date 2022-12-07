@@ -53,5 +53,5 @@ class Stack {
 //
 const stack = new Stack(5,1,2);
 //stack['_0'] - так не можна!!!
-console.log(stack)
-console.log(stack.pick())
+// console.log(stack)
+// console.log(stack.pick())
