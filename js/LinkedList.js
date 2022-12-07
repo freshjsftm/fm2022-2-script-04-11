@@ -60,8 +60,8 @@ class LinkedList {
 
 const list = new LinkedList(1, 2, true, "qwe", null, { prop: 12 });
 
-for (const item of list) {
-  console.log(item);
-}
+// for (const item of list) {
+//   console.log(item);
+// }
 
-console.log(...list);
+// console.log(...list);
