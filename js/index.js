@@ -1,30 +1,57 @@
 "use strict";
 
-const symbol = Symbol("propperty name for object");
-const object = {
-  name: "name",
-  12: 12,
-  [symbol]: "propperty name for object",
-};
-for (const key in object) {
-  console.log(object[key])
+const dictionary = new Map();
+dictionary.set("йти", "go");
+dictionary.set("їсти", "eat");
+dictionary.set("спати", "sleep");
+dictionary.set("кіт", "cat");
+dictionary.set("пес", "dog");
+dictionary.set("білка", "squirrel");
+dictionary.set("розумний", "clever");
+dictionary.set("веселий", "happy");
+dictionary.set("гарний", "nice");
+dictionary.set("багатий", "rich");
+dictionary.set("ліс", "forest");
+dictionary.set("у", "in");
+dictionary.set("з", "with");
+dictionary.set("день", "day");
+
+if (dictionary.has("qwe")) {
+  dictionary.delete("qwe");
+} else {
+  console.log('not found')
 }
-const array = ['1'];
-const sum = ()=>{}
-const myMap = new Map();
-console.log(myMap);
-myMap.set(object, "object");
-myMap.set(1, "one");
-myMap.set('1', "oneone");
-myMap.set(array, 'array')
-myMap.set(symbol, true);
-myMap.set('symbol', false);
-myMap.set(sum, sum);
-// for (const iterator of myMap) {
-//   console.log(iterator) 
+
+const arrays = [...dictionary.entries()]   //dictionary.keys();
+
+// const keys = dictionary.keys();
+// console.log(keys)
+for (const key of dictionary.keys()) {
+  console.log(key)
+}
+// for (const val of dictionary.values()) {
+//   console.log(val)
 // }
-console.log(myMap.get(sum));
-console.log(myMap.get('symbol'));
-console.log(myMap.get(1));
-console.log(myMap.get('1'));
-console.log(myMap.get(array));
+// for (const [key, value] of dictionary.entries()) {
+//   console.log(key, value);
+// }
+
+const str =
+  "Розумний Пес з веселий кіт Йти вечір швидко у ліс їсти Гарний білка .";
+
+// const translate = (str, dict = dictionary)=>{
+//   const words = str.toLowerCase().split(' ');
+//   const translateWords = words.map((word)=>{
+//     return dict.has(word)?dict.get(word):word
+//   })
+//   return translateWords.join(' ')
+// }
+
+const translate = (str, dict = dictionary, separator = " ") =>
+  str
+    .toLowerCase()
+    .split(separator)
+    .map((word) => (dict.has(word) ? dict.get(word) : word))
+    .join(separator);
+
+//console.log(translate(str));
