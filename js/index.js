@@ -1,67 +1,41 @@
 "use strict";
 
-const user = {
-  profession: "actor",
-  privateInfo: {
-    fname: "Brad",
-    lname: "Pitt",
-    gender: "male",
-    birthday: {
-      day: 18,
-      month: 12,
-      year: 1963,
-    },
-  },
-  contactInfo: {
-    profession: "superactor",
-    address: {
-      state: "Texas",
-      town: "Texas",
-      index: 123456,
-      street: "Avenu 5",
-    },
-    mail: "Brad@gmail.com",
-    phones: {
-      home: "123",
-      work: "456",
-    },
-  },
+/*
+compare('eat', 'tea'); //true
+compare('qwe', 'ewq'); //true
+compare('qwe', 'qweqwe'); //false
+compare('qwe', 'qwerty'); //false
+*/
+
+//створюємо словник - Map
+//  ключ - символ
+//  значення - кількість
+//такий словник створюємо для кожного слова
+//порівняти словники
+
+const createMap = (str)=>{
+  const mapStr = new Map();
+  for (const symbol of str) {
+    if (mapStr.has(symbol)) {
+      const countSymbol = mapStr.get(symbol);
+      mapStr.set(symbol, countSymbol + 1);
+      continue;
+    }
+    mapStr.set(symbol, 1);
+  }
+  return mapStr;
+}
+
+const compare = (str1, str2) => {
+  const mapStr1 = createMap(str1);
+  const mapStr2 = createMap(str2);
+  if(mapStr1.size !== mapStr2.size){
+    return false;
+  }
+  for (const key of mapStr1.keys()) {
+    if(mapStr1.get(key) !== mapStr2.get(key)){
+      return false;
+    }
+  }
+  return true;
 };
-
-const {
-  profession: profUser,
-  contactInfo: { profession: subProfUser },
-} = user;
-console.log(profUser);
-console.log(subProfUser);
-
-// const month = user.privateInfo.birthday.month;
-// const day = user.privateInfo.birthday.day;
-const {
-  privateInfo: {
-    birthday: { month: monthUser, day },
-  },
-} = user;
-console.log(monthUser, day);
-
-// console.log(user.privateInfo.birthday.month)
-
-//дістаньте пошту і стать
-
-const getFullName = ({ privateInfo: { fname, lname } }) => {
-  return `${fname} ${lname}`;
-};
-
-console.log(getFullName(user));
-
-const { contactInfo, ...restObject } = user;
-
-
-
-
-
-const arr = [7,8,9,10,11];
-
-// const [one,,, four] = arr;
-
-const [one,two, ...restArr] = arr;
