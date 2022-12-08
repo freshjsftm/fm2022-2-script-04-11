@@ -1,36 +1,67 @@
 "use strict";
 
-const dictionary = new Map()
-dictionary.set("йти", 'go')
-dictionary.set("їсти", 'eat');
-dictionary.set("спати", 'sleep');
-dictionary.set("кіт", 'cat');
-dictionary.set("пес", 'dog');
-dictionary.set("білка", 'squirrel');
-dictionary.set("розумний", 'clever');
-dictionary.set("веселий", 'happy');
-dictionary.set("гарний", 'nice');
-dictionary.set("багатий", 'rich');
-dictionary.set("ліс", 'forest');
-dictionary.set("у", 'in');
-dictionary.set("з", 'with');
-dictionary.set("день", 'day');
+const user = {
+  profession: "actor",
+  privateInfo: {
+    fname: "Brad",
+    lname: "Pitt",
+    gender: "male",
+    birthday: {
+      day: 18,
+      month: 12,
+      year: 1963,
+    },
+  },
+  contactInfo: {
+    profession: "superactor",
+    address: {
+      state: "Texas",
+      town: "Texas",
+      index: 123456,
+      street: "Avenu 5",
+    },
+    mail: "Brad@gmail.com",
+    phones: {
+      home: "123",
+      work: "456",
+    },
+  },
+};
 
-const set1 = new Set(dictionary.keys());
-const arr = [1,2,5,6,5,2,1,5,5,6,8,2,6];
-const arr2 = [2,9,6,5,4,8,5,3,58,9,5];
-// const set2 = new Set([...arr, ...arr2]);
-// console.log(set2)
-//const uniqueArr = [...set2]
-const uniqueArr = [...new Set([...arr, ...arr2])];
-console.log(uniqueArr);
-//const set1 = new Set("йти","їсти");
+const {
+  profession: profUser,
+  contactInfo: { profession: subProfUser },
+} = user;
+console.log(profUser);
+console.log(subProfUser);
 
-set1.add(1);
-set1.add('1');
-set1.add([1]);
-set1.add({1:1});
-set1.add('1');
-set1.add('1');
+// const month = user.privateInfo.birthday.month;
+// const day = user.privateInfo.birthday.day;
+const {
+  privateInfo: {
+    birthday: { month: monthUser, day },
+  },
+} = user;
+console.log(monthUser, day);
 
-console.log(set1)
+// console.log(user.privateInfo.birthday.month)
+
+//дістаньте пошту і стать
+
+const getFullName = ({ privateInfo: { fname, lname } }) => {
+  return `${fname} ${lname}`;
+};
+
+console.log(getFullName(user));
+
+const { contactInfo, ...restObject } = user;
+
+
+
+
+
+const arr = [7,8,9,10,11];
+
+// const [one,,, four] = arr;
+
+const [one,two, ...restArr] = arr;
